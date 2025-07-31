@@ -86,9 +86,9 @@ class TVController:
         # if((type(channel) == int  and channel in range(1, len(self.channels_list) + 1))
                                 # or (type(channel) == str and channel in self.channels_list)):
         if channel in range(1, len(self.channels_list) + 1) or channel in self.channels_list:
-            return True
+            return 'Yes'
         else:
-            return False
+            return 'No'
 
     def current_channel(self):
         return self.channels_list[self.cur_channel - 1]
