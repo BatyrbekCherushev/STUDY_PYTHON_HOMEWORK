@@ -1,47 +1,4 @@
-#===================================================== 1 ===============================================================
-"""Task 1
-
-A Person class
-
-Make a class called Person. Make the __init__() method take firstname, lastname, and age as parameters and add them as
-attributes. Make another method called talk() which makes prints a greeting from the person containing,
-for example like this: "Hello, my name is Carl Johnson and I’m 26 years old"."""
-class Person:
-
-    def __init__(self, firstname, lastname, age):
-        self.firstname = firstname
-        self.lastname = lastname
-        self.age = age
-
-    def talk(self):
-        print(f"Hello, my name is {self.firstname + ' ' + self.lastname} and I’m {self.age} years old")
-
-# TEST
-# person_1 = Person('Bek', 'Djeliev', 40)
-# person_1.talk()
-
-#===================================================== 2 ===============================================================
-"""Task 2
-
-Doggy age
-
-Create a class Dog with class attribute 'age_factor' equals to 7. Make __init__() which takes values for a dog’s age. 
-Then create a method `human_age` which returns the dog’s age in human equivalent."""
-class Dog:
-    AGE_FACTOR = 7
-
-    def __init__(self, dog_age: int):
-        self.age = dog_age
-
-    def human_age(self):
-        return self.age * Dog.AGE_FACTOR
-
-# TEST
-# dog_1 = Dog(10)
-# print(dog_1.human_age())
-
-#===================================================== 3 ===============================================================
-"""Task 3
+"""Task 3 - from 15_lesson_homework
 TV controller
 Create a simple prototype of a TV controller in Python. It’ll use the following commands:
 
@@ -95,24 +52,24 @@ class TVController:
 
 # TEST
 # controller = TVController(CHANNELS)
-#
-# # print(controller.current_channel())
-# #
-# # print(controller.last_channel())
-# # #
-# # print(controller.turn_channel(-1))
-# # print(controller.turn_channel(100000))
-# # print(controller.turn_channel(2))
-# #
-# # print(controller.next_channel())
-# # print(controller.next_channel())
-# # print(controller.next_channel())
-# #
-# # print(controller.previous_channel())
-# # print(controller.previous_channel())
-# # print(controller.previous_channel())
-# # print(controller.previous_channel())
-# #
+
+# print(controller.current_channel())
+
+# print(controller.last_channel())
+
+# print(controller.turn_channel(-1))
+# print(controller.turn_channel(100000))
+# print(controller.turn_channel(2))
+
+# print(controller.next_channel())
+# print(controller.next_channel())
+# print(controller.next_channel())
+
+# print(controller.previous_channel())
+# print(controller.previous_channel())
+# print(controller.previous_channel())
+# print(controller.previous_channel())
+
 # print(controller.exists(4))
 # print(controller.exists(0))
 # print(controller.exists(1))

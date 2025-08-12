@@ -1,0 +1,16 @@
+{
+    "0": {
+        "name": "Batyr",
+        "last_name": "Cherushev",
+        "tel": "+3098908435",
+        "city": "Kyiv",
+        "state": "Kyivska oblast"
+    },
+  "1": {
+        "name": "Goga",
+        "last_name": "Bumz",
+        "tel": "000",
+        "city": "Tilimilytryandiya",
+        "state": "Land of fools"
+    }
+}
