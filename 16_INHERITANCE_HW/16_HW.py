@@ -93,7 +93,7 @@ class Mathematician:
     @staticmethod
     def remove_positives(some_list:list):
         # return list(filter(lambda  x: x < 0, some_list))
-        return [x for x in some_list if x < 0]
+        return [x for x in some_list if x <= 0]
 
     @staticmethod
     def filter_leaps(some_list):
