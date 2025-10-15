@@ -1,0 +1,26 @@
+<!--notes/templates/notes/base.html-->
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Notes App Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'notes/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'notes/css/'%}{{page_name}}.css">
+</head>
+<body>
+    <header>
+        {% include "notes/header.html"%}
+    </header>
+
+    <main>
+        {% block content %} {% endblock %}
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+</html>

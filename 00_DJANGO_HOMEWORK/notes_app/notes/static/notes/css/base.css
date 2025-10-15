@@ -1,0 +1,23 @@
+/* ============================================================== GLOBAL*/
+a {
+    text-decoration: none;
+}
+/* GLOBAL END*/
+
+/* ============================================================ NAVIGATION */
+
+.navigation {
+    display: flex;
+    justify-content: flex-start;
+    /*background-color: #6f94c6;*/
+    width: 300px;
+    justify-self: flex-start;
+}
+
+.navigation a {
+    display: block;
+    background-color: #81d4fa;
+    margin: 10px;
+}
+
+/* NAVIGATION END */

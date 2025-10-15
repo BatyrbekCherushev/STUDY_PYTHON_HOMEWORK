@@ -1,0 +1,22 @@
+ <!-- notes/templates/notes/index.html -->
+{% extends 'notes/base.html' %}
+ {% block title%} Main Page{% endblock%}
+<!-- MAIN-->
+{% block content%}
+    <h2>МОЇ НОТАТКИ</h2>
+    <div class="notes">
+
+        {% for date, note_text in notes.items %}
+            <div class="notes_item">
+                <div class="note_item_date">
+                    {{date}}
+                </div>
+                <div class="note_item_text">
+                    {{note_text}}
+                </div>
+
+            </div>
+        {% endfor %}
+    </div>
+ {% endblock%}
+ <!-- MAIN END-->
