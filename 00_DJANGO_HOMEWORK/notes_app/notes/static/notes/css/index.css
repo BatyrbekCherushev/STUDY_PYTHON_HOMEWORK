@@ -4,8 +4,8 @@
 }
 
 .notes_item {
-    width: 100px;
-    min-height: 50px;
+    width: 200px;
+    min-height: 100px;
     background-color: gray;
     margin: 10px;
     border: 1px solid darkgray;
@@ -13,10 +13,17 @@
     padding: 3px;
 }
 
-.note_item_date {
+.note_item_title {
     background-color: #4ac1f7;
     text-align: center;
     margin-bottom: 5px;
+}
+
+.note_item_category {
+    background-color: yellowgreen;
+    text-align: center;
+    margin-bottom: 5px;
+    align-self: flex-end;
 }
 
 .note_item_text {

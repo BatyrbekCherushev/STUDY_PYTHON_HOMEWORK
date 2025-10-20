@@ -6,13 +6,19 @@
     <h2>МОЇ НОТАТКИ</h2>
     <div class="notes">
 
-        {% for date, note_text in notes.items %}
+        {% for note in notes %}
             <div class="notes_item">
-                <div class="note_item_date">
-                    {{date}}
+                <div class="note_item_title">
+                    {{note.title}}
                 </div>
+
                 <div class="note_item_text">
-                    {{note_text}}
+                    {{note.text}}
+                </div>
+
+                <div class="note_item_category">
+                    {% if note.category%}
+                    {{note.category}}{% endif %}
                 </div>
 
             </div>
