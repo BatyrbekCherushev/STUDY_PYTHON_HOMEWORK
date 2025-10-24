@@ -1,5 +1,6 @@
  <!-- notes/templates/notes/header.html -->
 <div class="navigation">
-    <a href="">main page</a>
-    <a href=""> some page</a>
+    <a href="{% url 'notes:index' %}">main page</a>
+
+    <a href="{% url 'notes:create_note' %}"> create note</a>
 </div>

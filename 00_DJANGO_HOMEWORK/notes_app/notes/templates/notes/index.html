@@ -20,9 +20,18 @@
                     {% if note.category%}
                     {{note.category}}{% endif %}
                 </div>
+                
+                <div >
+                    <a href="{% url 'notes:edit_note' pk=note.pk%}"> EDIT</a>
+                </div>
+
+                <div>
+                    <a href="{% url 'notes:delete_note' pk=note.pk%}"> DELETE</a>
+                </div>
 
             </div>
         {% endfor %}
     </div>
+
  {% endblock%}
  <!-- MAIN END-->
