@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
@@ -8,8 +9,8 @@ from .forms import CreateNoteForm
 
 
 # Create your views here.
-
-def index(request):
+@login_required(login_url="/login/")
+def notes_list(request):
     notes = Note.objects.all()
     template = loader.get_template("notes/index.html")
 
@@ -18,7 +19,7 @@ def index(request):
                "notes": notes}
     return HttpResponse(template.render(context, request))
 
-
+@login_required(login_url="/login/")
 def create_edit_note(request, pk = None):
     if pk:
         note = get_object_or_404(Note, pk=pk)
@@ -30,12 +31,16 @@ def create_edit_note(request, pk = None):
     elif request.method == "POST":
         form = CreateNoteForm(request.POST, instance = note)
         if form.is_valid():
-            form.save()
+            new_note = form.save(commit=False)
+            if not new_note.author:
+                new_note.author = request.user
+            new_note.save()
             return redirect("notes:index")
 
     context = {
         "form": form,
         "note": note,
+
         "page_header_title": "EDIT NOTE" if note else "CREATE NOTE"
     }
 

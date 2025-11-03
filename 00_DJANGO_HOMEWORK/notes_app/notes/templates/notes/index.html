@@ -1,5 +1,5 @@
  <!-- notes/templates/notes/index.html -->
-{% extends 'notes/base.html' %}
+{% extends 'base.html' %}
  {% block title%} Main Page{% endblock%}
 <!-- MAIN-->
 {% block content%}
@@ -12,9 +12,10 @@
             <div class="col">
                 <div class="card" style="width: 18rem;">
                   <div class="card-body">
-                    <h5 class="card-title">{{note.title}}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{% if note.category%}
-                        {{note.category}}{% endif %}</h6>
+                    <h5 class="card-title bg-dark text-info p-2">{{note.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted "><span class="text-warning">CATEGORY:</span> <span class="text-primary"> {% if note.category%}
+                        {{note.category}}{% endif %}</span></h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><span class="text-danger">AUTHOR:</span>  <span class="text-success">{{note.author.username}}</span></h6>
                     <p class="card-text">{{note.text}}</p>
                     <a href="{% url 'notes:edit_note' pk=note.pk%}" class="card-link">EDIT</a>
                     <a href="{% url 'notes:delete_note' pk=note.pk%}" class="card-link">DELETE</a>
