@@ -14,6 +14,7 @@ def index(request):
     template = loader.get_template("notes/index.html")
 
     context = {"page_name": "index",
+               "page_header_title": "My notes",
                "notes": notes}
     return HttpResponse(template.render(context, request))
 
@@ -26,17 +27,17 @@ def create_edit_note(request, pk = None):
 
     if request.method == "GET":
         form = CreateNoteForm(instance=note)
-
-        context = {
-            "form": form,
-            "note": note,
-            "page_title": "Редагувати нотатку" if note else "Створити нотатку"
-        }
     elif request.method == "POST":
         form = CreateNoteForm(request.POST, instance = note)
         if form.is_valid():
             form.save()
             return redirect("notes:index")
+
+    context = {
+        "form": form,
+        "note": note,
+        "page_header_title": "EDIT NOTE" if note else "CREATE NOTE"
+    }
 
     return render(request, "notes/create_note.html", context)
 

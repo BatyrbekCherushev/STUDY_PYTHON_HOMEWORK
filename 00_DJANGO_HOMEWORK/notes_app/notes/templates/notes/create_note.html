@@ -3,21 +3,29 @@
  {% block title%} Main Page{% endblock%}
 <!-- MAIN-->
 {% block content%}
-    <h2>{{page_title}}</h2>
 
-   <form action="{% if note %}
-                      {% url 'notes:edit_note' pk=note.pk %}
-                  {% else %}
-                      {% url 'notes:create_note' %}
-                  {% endif %}" method="post">
 
-    {% csrf_token %}
-    {{ form }}
+   <div class="container">
+       <h2>{{page_header_title}}</h2>
+       <div class="row">
+           <div class="col">
+               <form action="{% if note %}
+                                      {% url 'notes:edit_note' pk=note.pk %}
+                                  {% else %}
+                                      {% url 'notes:create_note' %}
+                                  {% endif %}" method="post">
 
-    <button type="submit">
-            {% if note %}Зберегти зміни{% else %}Створити нотатку{% endif %}
-        </button>
-</form>
+                    {% csrf_token %}
+                    {{ form }}
+
+                    <button type="submit" class="btn btn-primary">
+                            {% if note %}Зберегти зміни{% else %}Створити нотатку{% endif %}
+                        </button>
+                </form>
+           </div>
+       </div>
+
+   </div>
 
  {% endblock%}
  <!-- MAIN END-->
